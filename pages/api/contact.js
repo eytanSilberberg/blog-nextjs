@@ -24,7 +24,6 @@ async function handler(req, res) {
         const db = client.db('nexjs-e2e-db')
         try {
             await db.collection('contact').insertOne(newMessage)
-            res.status(201).json({ message: 'Message added', newMessage })
         } catch (error) {
             client.close()
             res.status(500).json({ message: 'Had an issue with writing in to the collection' })
