@@ -9,4 +9,6 @@ export async function sendMessage(message) {
             'content-type': 'application/json'
         }
     })
+    const messageReceived = await response.json()
+    console.log(messageReceived)
 }
